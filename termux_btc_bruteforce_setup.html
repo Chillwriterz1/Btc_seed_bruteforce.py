@@ -1,0 +1,68 @@
+
+<html>
+  <head>
+    <title>BTC Seed Phrase Brute Force Setup</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #121212;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+      .box {
+        background: #1e1e1e;
+        padding: 20px;
+        border-radius: 10px;
+        display: inline-block;
+        margin-top: 50px;
+        box-shadow: 0 0 10px rgba(255,255,255,0.1);
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 6px;
+        border: none;
+        background: #2e2e2e;
+        color: #fff;
+      }
+      button {
+        margin-top: 10px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #03dac6;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        color: #000;
+      }
+      button:hover {
+        background: #00c4b4;
+      }
+      .note {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #bbb;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>BTC Brute Force Script Installer (Termux)</h1>
+    <div class="box">
+      <p>Copy the command below and paste it into Termux:</p>
+      <input id="command" value="pkg update -y && pkg install -y git python && git clone https://github.com/chillwriterz/btc-seed-cracker && cd btc-seed-cracker && pip install bip32utils && python btc_seed_bruteforce.py" readonly />
+      <button onclick="copyCommand()">Copy to Clipboard</button>
+      <p class="note">This will auto-install the required files and start the brute-force script.</p>
+    </div>
+
+    <script>
+      function copyCommand() {
+        const cmd = document.getElementById("command");
+        cmd.select();
+        document.execCommand("copy");
+        alert("Command copied to clipboard!");
+      }
+    </script>
+  </body>
+</html>
